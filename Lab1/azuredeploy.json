@@ -1,0 +1,75 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "The storage account name"
+            }
+        },
+        "webAppName": {
+            "type": "string",
+            "metadata": {
+                "description": "The web app name"
+            }
+        },
+
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "The storage account location"
+            }
+        },
+        "appServicePlanName": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('storageAccountName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2023-04-01",
+            "location": "[parameters('location')]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "Standard_LRS"
+            }
+        },
+
+        {
+            "name": "[parameters('appServicePlanName')]",
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2023-01-01",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "F1",
+                "capacity": 1
+            }
+        },
+
+        {
+            "name": "[parameters('webAppName')]",
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2023-01-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+            ],
+            "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+            }
+        }
+    ],
+    "outputs": {
+        "storageAccountName": {
+            "type": "string",
+            "value": "[parameters('storageAccountName')]"
+        }
+    }
+}
