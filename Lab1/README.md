@@ -4,7 +4,7 @@
 This project provides an ARM template to deploy the following Azure resources:
 
 1. **Azure Storage Account** (Free Tier)
-2. **Azure Web App for Node.js** (Free Tier)
+2. **Azure Web App** (Free Tier)
 
 ## Structure
 
@@ -18,26 +18,10 @@ This project provides an ARM template to deploy the following Azure resources:
 - Permission to create resources in the selected resource group.
 
 ## Deployment Steps
-
-1. **Clone the repository**:
-
-   Run the following commands in your terminal:
+   Make sure you're logged into your Azure account and have the correct subscription set up, then run:
    
-   - `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git`
-   - `cd Lab1`
+- `az deployment group create --resource-group <your-resource-group> --template-file azuredeploy.json --parameters azuredeploy.parameters.json`
 
-2. **Deploy using Azure CLI**:
-
-     Make sure you're logged into your Azure account and have the correct subscription set up, then run:
-   
-   - `az deployment group create --resource-group <your-resource-group> --template-file azuredeploy.json --parameters azuredeploy.parameters.json`
-
-3. **Deploy using Azure Portal**:
-
-   - Go to the Azure Portal.
-   - Navigate to **Resource Groups** and select your target resource group.
-   - Click on **Deploy a custom template** and upload the `azuredeploy.json` and `azuredeploy.parameters.json` files.
-   - Review and confirm the deployment.
 
 ## Parameters
 
