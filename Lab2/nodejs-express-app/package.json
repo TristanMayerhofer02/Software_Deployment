@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-express-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.0.2"
+  }
+}
