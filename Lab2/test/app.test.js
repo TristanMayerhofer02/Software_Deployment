@@ -6,6 +6,16 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 
 describe('GET /', () => {
+    let server;
+
+    before(() => {
+        server = app.listen(3000); // Server starten
+    });
+
+    after(() => {
+        server.close(); // Server stoppen
+    });
+
     it('should return Hello, Azure DevOps!', (done) => {
         chai.request(app)
             .get('/')
