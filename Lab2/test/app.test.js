@@ -6,22 +6,18 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 
 describe('GET /', () => {
-    let server; // Server-Instanz
-    let port = 0; // Dynamischer Port
+    let server; 
+    let port = 0; 
 
     before((done) => {
-        // Server auf einem zufälligen freien Port starten
         server = app.listen(0, () => {
-            port = server.address().port; // Dynamisch zugewiesener Port
-            console.log(`Test server started on port ${port}`);
+            port = server.address().port; 
             done();
         });
     });
 
     after((done) => {
-        // Server stoppen
         server.close(() => {
-            console.log('Test server stopped');
             done();
         });
     });

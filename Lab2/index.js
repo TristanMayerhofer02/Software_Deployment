@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
 });
 
 if (require.main === module) {
-    const port = process.env.PORT || 3000; // Fallback zu 3000, falls PORT nicht gesetzt
+    const port = process.env.PORT || 8080; 
     app.listen(port, () => {
         console.log(`Server running on http://localhost:${port}`);
     });
