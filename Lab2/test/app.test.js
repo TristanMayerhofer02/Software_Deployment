@@ -6,18 +6,28 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 
 describe('GET /', () => {
-    let server;
+    let server; // Server-Instanz
+    let port = 0; // Dynamischer Port
 
-    before(() => {
-        server = app.listen(3000); // Server starten
+    before((done) => {
+        // Server auf einem zufälligen freien Port starten
+        server = app.listen(0, () => {
+            port = server.address().port; // Dynamisch zugewiesener Port
+            console.log(`Test server started on port ${port}`);
+            done();
+        });
     });
 
-    after(() => {
-        server.close(); // Server stoppen
+    after((done) => {
+        // Server stoppen
+        server.close(() => {
+            console.log('Test server stopped');
+            done();
+        });
     });
 
     it('should return Hello, Azure DevOps!', (done) => {
-        chai.request(app)
+        chai.request(`http://localhost:${port}`)
             .get('/')
             .end((err, res) => {
                 expect(res).to.have.status(200);
