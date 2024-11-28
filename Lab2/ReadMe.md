@@ -39,7 +39,6 @@ Die Änderungen aus der Entwicklungsumgebung (Main-Branch) werden automatisch in
 
 2. **GitHub Actions Workflow überprüfen:**
    - Öffne das Tab **Actions** in deinem GitHub-Repository.
-   - Überprüfe die Logs des `release.yml`-Workflows, um sicherzustellen, dass das Deployment erfolgreich war.
    - Die Änderungen werden automatisch in der Produktionsumgebung bereitgestellt.
 
 ## **Screenshots**
