@@ -15,10 +15,6 @@ Dieses Projekt beinhaltet das Deployment einer Node.js Anwendung auf Azure Web A
 
 - Ein aktives Azure Abonnement.
 - Berechtigung zum Erstellen von Ressourcen in der Ziel-Ressourcengruppe.
-- Konfigurierte GitHub Geheimnisse:
-  - AZURE_CLIENT_ID
-  - AZURE_TENANT_ID
-  - AZURE_SUBSCRIPTION_ID
 
 ## Links zu den Web Apps
 
@@ -70,29 +66,3 @@ Die Änderungen aus der Entwicklungsumgebung (Main-Branch) werden automatisch in
   - `chai`
 - **Test-Framework:** Mocha & Chai
 - **Cloud-Dienste:** Azure Web Apps
-
----
-
-## **Links zu den Web Apps**
-
-- **Entwicklungsumgebung (Lab2-Dev):** [lab2-dev-dsd4d3hya4h9d4f2.westeurope-01.azurewebsites.net](https://lab2-dev-dsd4d3hya4h9d4f2.westeurope-01.azurewebsites.net)
-- **Produktionsumgebung (Lab2-Prod):** [lab2-prod-crathne5gvc8bgca.westeurope-01.azurewebsites.net](https://lab2-prod-crathne5gvc8bgca.westeurope-01.azurewebsites.net)
-
----
-
-## **Struktur**
-
-- **`Lab2/`**: Enthält die Node.js-Anwendung:
-  - **`index.js`**: Startpunkt der Anwendung.
-  - **`package.json`**: Konfigurationsdatei mit Abhängigkeiten und Skripten.
-  - **`app.test.js`**: Unit Tests der Anwendung.
-- **`.github/workflows/`**:
-  - **`main.yml`**: GitHub Actions Workflow für die Entwicklungsumgebung.
-  - **`release.yml`**: GitHub Actions Workflow für die Produktionsumgebung.
-
----
-
-## **Anforderungen**
-
-- Ein aktives Azure-Abonnement.
-- Berechtigung zum Erstellen von Ressourcen in der Zielressourcengruppe.
