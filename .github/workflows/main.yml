@@ -16,21 +16,15 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: 18  # Passe diese Version an deine lokale Umgebung an
 
     - name: Install dependencies
       working-directory: Lab2
       run: npm install
 
-    - name: Debug Node.js Environment
+    - name: Fix permissions for mocha
       working-directory: Lab2
-      run: |
-        echo "Node.js version:"
-        node -v
-        echo "npm version:"
-        npm -v
-        echo "Installed packages:"
-        npm list
+      run: chmod +x ./node_modules/.bin/mocha
 
     - name: Run tests
       working-directory: Lab2
@@ -40,5 +34,5 @@ jobs:
       uses: Azure/static-web-apps-deploy@v1
       with:
         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-        app_location: "Lab2/"          
-        output_location: ""           
+        app_location: "Lab2/"           # Verzeichnis mit der App
+        output_location: ""             # Kein spezieller Build erforderlich
