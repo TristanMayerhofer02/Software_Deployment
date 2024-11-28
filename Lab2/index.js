@@ -1,13 +1,28 @@
-const express = require('express');
-const app = express();
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const app = require('../index');
 
-app.get('/', (req, res) => {
-    res.send('Hello, Azure DevOps!');
+chai.use(chaiHttp);
+const expect = chai.expect;
+
+describe('GET /', () => {
+    let server;
+
+    before(() => {
+        server = app.listen(3000); // Server starten
+    });
+
+    after(() => {
+        server.close(); // Server stoppen
+    });
+
+    it('should return Hello, Azure DevOps!', (done) => {
+        chai.request(app)
+            .get('/')
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+                expect(res.text).to.equal('Hello, Azure DevOps!');
+                done();
+            });
+    });
 });
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
-
-module.exports = app;
