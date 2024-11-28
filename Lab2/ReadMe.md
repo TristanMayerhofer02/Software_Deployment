@@ -3,7 +3,7 @@ Dieses Projekt beinhaltet das Deployment einer Node.js Anwendung auf Azure Web A
 
 ## Struktur
 
-- Lab2/`**: Enthält die Node.js Anwendung:
+- **`Lab2/`**: Enthält die Node.js Anwendung:
   - **`index.js`**: Startpunkt der Anwendung.
   - **`package.json`**: Konfigurationsdatei mit Abhängigkeiten und Scripts.
   - **`app.test.js`**: Unit-Tests der Anwendung.
@@ -47,17 +47,17 @@ Die Änderungen aus der Entwicklungsumgebung (Main-Branch) werden automatisch in
 
 - **Fehlgeschlagener Build:**
 
-  ![Fehlgeschlagener Build](./main_error.PNG)
+  ![Fehlgeschlagener Build](./image/main_error.PNG)
 
 - **Erfolgreicher Build:**
 
-  ![Erfolgreicher Build](./main_finished.PNG)
+  ![Erfolgreicher Build](./image/main_finished.PNG)
 
 ### Release Pipeline (Produktionsumgebung)
 
 - **Erfolgreiches Deployment:**
 
-  ![Erfolgreiches Deployment](./released_finished.PNG)
+  ![Erfolgreiches Deployment](./image/released_finished.PNG)
 
 ---
 
