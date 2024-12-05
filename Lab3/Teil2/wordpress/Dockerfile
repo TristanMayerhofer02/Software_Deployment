@@ -1,29 +1,26 @@
-FROM debian:latest
+FROM debian:bullseye
 
-RUN apt-get update && apt-get install -y \
-    apache2 \
+RUN apt update && apt upgrade -y
+RUN apt install -y apache2 \
     php \
+    libapache2-mod-php \
     php-mysql \
-    wget \
-    unzip \
-    && rm -rf /var/lib/apt/lists/*
+    php-zip \
+    php-mbstring \
+    php-curl \
+    wget unzip
 
-RUN wget https://wordpress.org/latest.zip \
-    && unzip latest.zip \
-    && mv wordpress/* /var/www/html/ \
-    && chown -R www-data:www-data /var/www/html/ \
-    && chmod -R 755 /var/www/html/ \
-    && rm -rf latest.zip wordpress
+RUN cd /var/www/html/ && \
+    wget https://wordpress.org/latest.zip && \
+    unzip -q latest.zip && \
+    chown -R www-data:www-data /var/www/html/wordpress && \
+    chmod -R 755 /var/www/html/wordpress && \
+    mkdir -p /var/www/html/wordpress/wp-content/uploads && \
+    chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
 
-RUN rm /var/www/html/index.html
 
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/wordpress|g' /etc/apache2/sites-available/000-default.conf
 
-RUN echo '<Directory /var/www/html/>\n\
-    Options Indexes FollowSymLinks\n\
-    AllowOverride All\n\
-    Require all granted\n\
-</Directory>\n\
-DirectoryIndex index.php index.html\n' > /etc/apache2/conf-available/wordpress.conf \
-    && a2enconf wordpress
+EXPOSE 80
 
 CMD ["apachectl", "-D", "FOREGROUND"]
