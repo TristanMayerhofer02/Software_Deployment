@@ -59,4 +59,5 @@ Gib während der WordPress-Installation folgende Daten ein:
 - **Benutzername:** `user`
 - **Passwort:** `password`
 - **Datenbank-Host:** `mysql`
+
 ![WordPress Einrichtung](./Images/Login.PNG)
