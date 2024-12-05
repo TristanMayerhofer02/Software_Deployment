@@ -2,9 +2,9 @@
 ## **Teil 1: Verwendung offizieller Docker-Images**
 
 ### Ausführung
-1. Navigiere in das Verzeichnis `part-1`:
+1. Navigiere in das Verzeichnis `Teil1`:
    ```bash
-   cd part-1
+   cd Teil1
    ```
 
 2. Starte die Container mit:
@@ -25,9 +25,9 @@
 ## **Teil 2: Erstellung eigener Docker-Images**
 
 ### Ausführung
-1. Navigiere in das Verzeichnis `part-2`:
+1. Navigiere in das Verzeichnis `Teil2`:
    ```bash
-   cd part-2
+   cd Teil2
    ```
 
 2. Baue und starte die Container mit:
