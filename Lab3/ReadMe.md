@@ -15,7 +15,7 @@
 3. WordPress ist erreichbar unter:
    - [http://localhost:8000](http://localhost:8000)
 
-4. Starte die Container mit:
+4. Wenn du die Container nach der Nutzung stoppen möchtest, führe folgenden Befehl aus:
    ```bash
    docker-compose down
    ```
@@ -43,7 +43,7 @@
 3. WordPress ist erreichbar unter:
    - [http://localhost:8000](http://localhost:8000)
 
-4. Starte die Container mit:
+4. Wenn du die Container nach der Nutzung stoppen möchtest, führe folgenden Befehl aus:
    ```bash
    docker-compose down
    ```
