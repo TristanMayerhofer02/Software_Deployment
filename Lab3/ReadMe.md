@@ -1,4 +1,4 @@
-###WordPress Deployment
+### WordPress Deployment
 ## **Teil 1: Verwendung offizieller Docker-Images**
 
 ### Ausführung
@@ -11,10 +11,15 @@
    ```bash
    docker-compose up -d
    ```
-
+   
 3. WordPress ist erreichbar unter:
    - [http://localhost:8000](http://localhost:8000)
 
+4. Starte die Container mit:
+   ```bash
+   docker-compose down
+   ```
+   
 ### Technische Details
 - **WordPress** läuft auf Port `8000`.
 - **MariaDB** läuft auf Port `3306`.
@@ -38,6 +43,10 @@
 3. WordPress ist erreichbar unter:
    - [http://localhost:8000](http://localhost:8000)
 
+4. Starte die Container mit:
+   ```bash
+   docker-compose down
+   ```
 ### Docker-Compose Übersicht
 - **MariaDB:** Verwendet ein selbst erstelltes Docker-Image basierend auf Debian.
 - **WordPress:** Verwendet ein selbst erstelltes Docker-Image mit Apache, PHP und WordPress.
