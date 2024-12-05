@@ -55,9 +55,5 @@ Die MariaDB-Datenbank ist wie folgt konfiguriert:
 
 ### WordPress-Einrichtung
 Gib während der WordPress-Installation folgende Daten ein:
-- **Datenbankname:** `wordpress`
-- **Benutzername:** `user`
-- **Passwort:** `password`
-- **Datenbank-Host:** `mysql`
 
 ![WordPress Einrichtung](./Images/Login.PNG)
