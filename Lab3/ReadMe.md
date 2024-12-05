@@ -1,12 +1,4 @@
-# WordPress Deployment mit MariaDB
-
-## Autor
-- **Name:** Dein Name
-- **Kurs:** Software Deployment - ILV
-- **Repository:** [GitHub Link](#)
-
----
-
+###WordPress Deployment
 ## **Teil 1: Verwendung offizieller Docker-Images**
 
 ### Ausführung
@@ -67,6 +59,4 @@ Gib während der WordPress-Installation folgende Daten ein:
 - **Benutzername:** `user`
 - **Passwort:** `password`
 - **Datenbank-Host:** `mysql`
-
-#### Beispiel:
 ![WordPress Einrichtung](./Images/Login.PNG)
