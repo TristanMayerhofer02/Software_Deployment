@@ -40,4 +40,4 @@
 
 4. **Zugriff auf WordPress:**  
    Öffne die angezeigte URL im Browser:  
-   `127.0.0.1:57464`
+   Beispiel-URL: `127.0.0.1:57464`
