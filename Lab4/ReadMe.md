@@ -24,7 +24,7 @@
 
 1. **Minikube starten:**
    ```bash
-   minikube start --driver=docker --cpus=4 --memory=4096
+   minikube start --driver=docker
    ```
 
 2. **Deployments ausführen:**
